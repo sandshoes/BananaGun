@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	"github.com/Pallinder/go-randomdata"
 )
 
 func helloGoHandler(w http.ResponseWriter, r *http.Request) {
@@ -16,6 +17,7 @@ func aboutHandler(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 	fmt.Printf("Starting server at port 8080\n")
+	fmt.Println(randomdata.SillyName())
 
 	http.HandleFunc("/", helloGoHandler)
 	http.HandleFunc("about", aboutHandler)
