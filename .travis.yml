@@ -13,4 +13,4 @@ dist: focal
 install: true
 
 script:
-  go build
+  go build -v -mod=vendor
