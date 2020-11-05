@@ -14,3 +14,13 @@ install: true
 
 script:
   go build -v -mod=vendor
+
+deploy:
+  on:
+    branch: master
+  provider: s3
+  access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+  secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+  bucket: "bananagunbucket"
+  skip_cleanup: true
+  region: eu-west-1
